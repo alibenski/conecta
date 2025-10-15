@@ -1,0 +1,312 @@
+
+:root {
+  --light-grey: #ACACAC;
+  --orange: #CF8D34;
+  --grey: #919191;
+  --white: #FFFFFF;
+}
+
+
+body {
+	background-color:#F5F1EB;
+}
+
+
+nav {
+	background-color:#fff;
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.08);
+	font-weight: 600;
+}
+
+
+
+a {
+	text-decoration: none;
+	color:var(--orange);
+}
+
+a:hover {
+	color:#FF9100;
+}
+
+hr {
+	color:var(--light-grey);
+	margin:0px;
+	margin-bottom:16px;
+}
+
+#main {
+	padding-top:120px;
+}
+
+img {
+	width:100%;
+}
+
+.btn {
+	font-weight: 600;
+}
+
+
+/* Color Classes */
+
+
+.light-grey {
+	color:var(--light-grey);
+}
+
+.orange {
+	color:var(--orange);
+}
+
+.grey {
+	color:var(--grey);
+}
+
+/* Navigation */
+
+.navbar {
+	padding:0px;
+}
+
+#search {
+	background-color:#F5F1EB;
+	height:48px;
+	width:320px;
+	border:0px;
+}
+
+#search::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #DED6C9;
+}
+#search::-moz-placeholder { /* Firefox 19+ */
+  color: #DED6C9;
+}
+#search:-ms-input-placeholder { /* IE 10+ */
+  color: #DED6C9;
+}
+#search:-moz-placeholder { /* Firefox 18- */
+  color: #DED6C9;
+}
+
+/* Cards */
+
+
+.card {
+	border-radius: 8px;
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.04);
+	border:0px;
+}
+
+.card-body {
+	padding:24px;
+}
+
+
+
+
+/* Buttons */
+
+.btn-primary {
+	background-color:#CF8D34;
+	border:0px;
+}
+
+.btn-primary:hover {
+	background-color:#FF9100;
+}
+
+.btn-primary:focus {
+	background-color:#FF9100;
+}
+
+.btn-link {
+	color:#CF8D34;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.btn-link:hover {
+	color:#FF9100;
+}
+
+.btn-primary:focus {
+	border:0px;
+}
+
+
+.btn-primary.disabled, .btn-primary:disabled {
+	background-color:#CF8D34;
+}
+
+
+/* Profile */
+
+.profile-image {
+	width:48px;
+	height:48px;
+	border-radius: 24px;
+	text-align: center;
+	padding-top:12px;
+	background-color:var(--light-grey);
+	color:var(--white);
+}
+
+.profile-image-big {
+	width:96px;
+	height:96px;
+	border-radius: 50%;
+	text-align: center;
+	padding-top:12px;
+	margin:0px auto;
+	margin-top:-72px;
+	background-color:var(--light-grey);
+	color:var(--white);
+	margin-bottom:32px;
+	font-size:32px;
+	padding-top:20px;
+	border:4px solid #fff;
+}
+
+/* Skills */
+
+.link-list {
+	list-style-type: none;
+	margin:0px;
+	padding: 0px;
+	font-weight: 600;
+}
+
+.link-list li {
+	line-height: 2rem;
+}
+
+.skill-pill {
+	text-align: center;
+	font-weight: 600;
+	background-color:var(--light-grey);
+	color:#fff;
+	border-radius: 12px;
+	font-size:10px;
+	padding:4px;
+}
+
+.skill-pill.Expert {
+	background:var(--orange);
+}
+
+.skill-pill.Advanced {
+	background:#D9A55F;
+}
+
+.skill-pill.Intermediate {
+	background:#E7C699;
+	color:var(--orange);
+}
+
+.skill-pill.Beginner {
+	background:#F3E2CC;
+	color:var(--orange);
+}
+
+.skill-pill.Undefined {
+	background:var(--light-grey);
+	color:var(--white);
+}
+
+
+/* Projects */
+
+.project-image-big {
+	height:150px;
+	border:4px solid white;
+	margin-top:-75px;
+}
+
+.project-need {
+	background-color:#F5F1EB;
+	border-radius: 16px;
+}
+
+/* Search */
+
+#search-nav {
+	top:72px;
+}
+
+.preloader {
+	width:32px;
+}
+
+
+
+
+
+
+.search-input .autocom-box{
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.search-input.active .autocom-box{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.autocom-box li{
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+}
+
+.search-input.active .autocom-box li{
+  display: block;
+}
+.autocom-box li:hover{
+  background: #efefef;
+}
+
+.search-input .icon{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 20px;
+  color: #644bff;
+  cursor: pointer;
+}
+
+.checkbox {
+	text-align:left !important;
+}
+
+.ui-menu {
+	z-index: 999999;
+}
+
+.navbar .nav-item:hover .nav-link {
+	color:#FF9100;
+}
+
+.field-error {
+	border:1px solid #f00000;
+}
+
+
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .nav-link{ color: #FF9100; border-bottom:solid 3px #FF9100; padding-top:9px; }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}	
+

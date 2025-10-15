@@ -1,0 +1,53 @@
+# Laravel & PHP
+/vendor/
+.env
+.env.backup
+.env.*.local
+.phpunit.result.cache
+Homestead.yaml
+Homestead.json
+.idea/
+.vscode/
+.phpstorm.meta.php
+.phpunit.cache/
+composer.lock
+
+# Laravel specific directories
+/storage/*
+!/storage/app
+!/storage/app/public
+!/storage/framework
+!/storage/framework/cache
+!/storage/framework/sessions
+!/storage/framework/views
+!/storage/logs
+/storage/*.key
+
+# Node / Frontend
+/node_modules/
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+/public/hot
+/public/storage
+/public/mix-manifest.json
+/public/build
+/public/js/*.map
+/public/css/*.map
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.log
+
+# Optional: if using Laravel Sail or Docker
+docker-compose.override.yml
+.ddev/
+.docker/
+
+# Optional: testing and coverage
+coverage/
+tests/_output/
