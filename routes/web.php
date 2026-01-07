@@ -5,6 +5,7 @@ use App\Http\Controllers\ZoomController;
 
 Route::get('/zoom/webinar/add-dropdown', [ZoomController::class, 'addWebinarDropdown']);
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
