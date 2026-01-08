@@ -2,6 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ZoomController;
+use Illuminate\Support\Facades\Http;
+
+Route::get('/zoom/debug/webinar', function () {
+    $token = Http::withBasicAuth(
+        config('services.zoom.client_id'),
+        config('services.zoom.client_secret')
+    )->asForm()->post('https://zoom.us/oauth/token', [
+        'grant_type' => 'account_credentials',
+        'account_id' => config('services.zoom.account_id'),
+    ])->json('access_token');
+
+    return Http::withToken($token)
+        ->get('https://api.zoom.us/v2/webinars/96333247892')
+        ->json();
+});
 
 Route::get('/zoom/webinar/add-dropdown', [ZoomController::class, 'addWebinarDropdown']);
 
