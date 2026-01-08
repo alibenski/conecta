@@ -9,7 +9,7 @@ class ZoomService
 {
     private string $baseUrl = 'https://api.zoom.us/v2';
 
-    private function accessToken(): string
+    private function token(): string
     {
         $response = Http::withBasicAuth(
             config('services.zoom.client_id'),
@@ -29,15 +29,36 @@ class ZoomService
     }
 
     /**
-     * Adds a dropdown (single-choice) question to a webinar registration form
+     * Append dropdown question to webinar registration safely
      */
-    public function addDropdownToWebinar(int $webinarId, array $question): void
+    public function appendDropdownToWebinar(int $webinarId, array $question): void
     {
-        Http::withToken($this->accessToken())
+        $token = $this->token();
+
+        // 1️⃣ Get current webinar
+        $webinar = Http::withToken($token)
+            ->get("{$this->baseUrl}/webinars/{$webinarId}")
+            ->throw()
+            ->json();
+
+        $existingQuestions = data_get($webinar, 'settings.questions', []);
+
+        // 2️⃣ Prevent duplicate field_name
+        foreach ($existingQuestions as $existing) {
+            if (($existing['field_name'] ?? null) === $question['field_name']) {
+                return; // already exists → idempotent
+            }
+        }
+
+        // 3️⃣ Merge questions
+        $questions = array_merge($existingQuestions, [$question]);
+
+        // 4️⃣ PATCH webinar
+        Http::withToken($token)
             ->patch("{$this->baseUrl}/webinars/{$webinarId}", [
                 'settings' => [
                     'registration_type' => 1,
-                    'questions' => [$question],
+                    'questions' => $questions,
                 ],
             ])
             ->throw();

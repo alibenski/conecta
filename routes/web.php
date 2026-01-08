@@ -18,6 +18,11 @@ Route::get('/zoom/debug/webinar', function () {
         ->json();
 });
 
+
+Route::get(
+    '/zoom/webinar/add-dropdown',
+    [ZoomController::class, 'addWebinarDropdown']
+);
 Route::get('/zoom/webinar/add-dropdown', [ZoomController::class, 'addWebinarDropdown']);
 
 
