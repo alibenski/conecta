@@ -43,9 +43,9 @@ class ZoomService
 
         $existingQuestions = data_get($webinar, 'settings.questions', []);
 
-        // 2️⃣ Prevent duplicate field_name
+        // 2️⃣ Prevent duplicate title
         foreach ($existingQuestions as $existing) {
-            if (($existing['field_name'] ?? null) === $question['field_name']) {
+            if (($existing['title'] ?? null) === $question['title']) {
                 return; // already exists → idempotent
             }
         }
