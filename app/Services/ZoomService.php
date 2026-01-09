@@ -57,7 +57,6 @@ class ZoomService
         Http::withToken($token)
             ->patch("{$this->baseUrl}/webinars/{$webinarId}", [
                 'settings' => [
-                    'registration_type' => 1,
                     'questions' => $questions,
                 ],
             ])
