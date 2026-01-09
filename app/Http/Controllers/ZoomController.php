@@ -11,9 +11,10 @@ class ZoomController extends Controller
         $zoom->appendDropdownToWebinar(
             96333247892,
             [
-                "field_name": "API Test Question",
-          "type": "short",
-          "required": false
+                'field_name' => 'Test Question',
+                'type' => 'short',
+                'required' => false,
+               
             ]
         );
 
