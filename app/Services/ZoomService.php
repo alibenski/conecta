@@ -39,6 +39,7 @@ class ZoomService
             ->patch("{$this->baseUrl}/webinars/{$webinarId}/registrants/questions", [
                 'questions' => [
                     [
+                        'field_name' => 'test_question',
                         'title'    => 'Test Question',
                         'type'     => 'short',
                         'required' => false,
