@@ -29,6 +29,26 @@ class ZoomService
     }
 
     /**
+     * Add a simple custom registration question
+     */
+    public function addCustomQuestion(int $webinarId): void
+    {
+        $token = $this->token();
+
+        Http::withToken($token)
+            ->patch("{$this->baseUrl}/webinars/{$webinarId}/registrants/questions", [
+                'questions' => [
+                    [
+                        'title'    => 'Test Question',
+                        'type'     => 'short',
+                        'required' => false,
+                    ]
+                ]
+            ])
+            ->throw();
+    }
+    
+    /**
      * Append dropdown question to webinar registration safely
      */
     public function appendDropdownToWebinar(int $webinarId, array $question): void

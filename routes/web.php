@@ -17,8 +17,10 @@ Route::get('/zoom/debug/webinar', function () {
         ->get('https://api.zoom.us/v2/webinars/96333247892')
         ->json();
 });
-
-
+Route::get('/zoom/webinar', function () {
+    return view('zoom');
+});
+Route::post('/zoom/webinar/question', [ZoomController::class, 'addQuestion'])->name('zoom.addQuestion');
 Route::get('/zoom/webinar/add-dropdown', [ZoomController::class, 'addWebinarDropdown']);
 
 
